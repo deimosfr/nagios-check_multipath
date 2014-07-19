@@ -1,0 +1,27 @@
+# Nagios module to check Fiber Channel paths (Multipathing) status for Solaris v0.1
+# Made by Pierre Mavro
+# Last Modified : 17/04/2009
+#
+# This Nagios module is under GPLv2 License
+#
+########################################################################
+#
+# Installation (nagios client side) :
+# - Copy the script in your nagios plugins directory (usualy /opt/csw/libexec/nagios-plugins)
+# - Set good rights (755 for root:bin)
+#
+# Usage : check_multipath -d<device> -t<total_path> -w<warning_path_number> -c<critical_path_number>
+#           -d device path (ex. /dev/rdsk/c4t600A0B8000492C630000038849DB2A3Ad0s2)
+#           -t total paths (number of active path in non degraded state)
+#           -w warning from path number lost (ex. warn if lost 1 path)
+#           -c critical from path number remaining (ex. critical if stay only 1 active path)
+#
+# Example : check_multipath -d /dev/rdsk/c4t600A0B8000492C630000038849DB2A3Ad0s2 -t 4 -w 1 -c 2
+#
+########################################################################
+#
+# History :
+#
+# v0.1 :
+# + First version
+#
